@@ -1,0 +1,978 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09E593F9472C3BB1705DC8A0281817D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		1755777A707395F857556232C59D88BA /* Pods-Camera Slider-Camera SliderUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 092EC0A845DE39C91935F4B4A6F260E9 /* Pods-Camera Slider-Camera SliderUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B7B0DFC290438BD97BEB8DAAA6DACD6 /* SwiftRangeSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C88605C6051BC681B16DACA1797C7C89 /* SwiftRangeSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C1F987AE24540B363F98EFC2DD541A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		2E6F03857567D855267050342F23906C /* Pods-Camera Slider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B9E99727715535406B0248CA033F2 /* Pods-Camera Slider-dummy.m */; };
+		3BD7684DEB8F1939E78B776881FABEDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
+		55469A923B034CB3CB1CA75203A26507 /* Pods-Camera Slider-Camera SliderUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A476287E0A0E64ECF0A78586FBD2FE45 /* Pods-Camera Slider-Camera SliderUITests-dummy.m */; };
+		5652480EAC92270640DA00F3BBB283E7 /* RangeSliderKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469DC8B8F667AECC47B0057AFCBC110 /* RangeSliderKnob.swift */; };
+		670D15E04915EE84A15481ACE5BB7A9A /* RangeSliderTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3742219C586847C30EE6891125866E5 /* RangeSliderTrack.swift */; };
+		677FBA14337583300A17827BB331CF5A /* Pods-Camera Slider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55EC937631A11413FCEA7A6DD2A05017 /* Pods-Camera Slider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A018D6CB80138B5A4EC7E6762505EEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		ADD70A73049D61C7ADD6942CC2EB2232 /* SwiftRangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD863A2A8DBA55AC68E643DD923BB89 /* SwiftRangeSlider-dummy.m */; };
+		B51055C573C84B7C03BE00FBC5400726 /* Pods-Camera SliderTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4907011FD589C2CDD1A4E1E93D264B57 /* Pods-Camera SliderTests-dummy.m */; };
+		C20D5E17FBF45CFDC5A2125D1F95F2A0 /* Pods-Camera SliderTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 979A9921417E48346024C0F66BB63AC7 /* Pods-Camera SliderTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C26C51F3607945F97E62974E83668D42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		DF44245E1F5D218AED37E1579C99C145 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7DE8801591953512C4817275C1A137 /* RangeSlider.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35C707C65D603E83BD5B69378FA44FCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4468DA463E43D33582E6BA100A6B78E;
+			remoteInfo = SwiftRangeSlider;
+		};
+		843BD569782E99A8E5744FF46E16519F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BAF98074270E655D3E6C17EDD97FF87;
+			remoteInfo = "Pods-Camera Slider";
+		};
+		FC92FDE73FBA72ED12F468A9B6EF859C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4468DA463E43D33582E6BA100A6B78E;
+			remoteInfo = SwiftRangeSlider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01F6A7E7DE6AE2CF2341CBA2C254377D /* Pods-Camera Slider-Camera SliderUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Camera Slider-Camera SliderUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		01FBCA75D13D6ED802C57DCE13BD66BF /* Pods-Camera SliderTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Camera SliderTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0703C15AD2B3752A0D79418BD4230000 /* Pods-Camera SliderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Camera SliderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		092EC0A845DE39C91935F4B4A6F260E9 /* Pods-Camera Slider-Camera SliderUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Camera Slider-Camera SliderUITests-umbrella.h"; sourceTree = "<group>"; };
+		0965C1786FF958365C6D7065134D5615 /* Pods-Camera Slider-Camera SliderUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Camera Slider-Camera SliderUITests-frameworks.sh"; sourceTree = "<group>"; };
+		0AC13B1A769A3AFB27EB1ED318DF854E /* Pods-Camera SliderTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Camera SliderTests.modulemap"; sourceTree = "<group>"; };
+		1469DC8B8F667AECC47B0057AFCBC110 /* RangeSliderKnob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RangeSliderKnob.swift; path = SwiftRangeSlider/RangeSliderKnob.swift; sourceTree = "<group>"; };
+		1868EBD037AFA41A702F230CE58EA77C /* Pods_Camera_Slider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Camera_Slider.framework; path = "Pods-Camera Slider.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DCDEDCD090D0449D681FFB2806A30AA /* Pods-Camera Slider-Camera SliderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Camera Slider-Camera SliderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		214BF6ACB4FAD5F02C13CF050A76D6AB /* Pods-Camera Slider-Camera SliderUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Camera Slider-Camera SliderUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2673C7E75D967978B878305EC0935E6A /* Pods-Camera Slider-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Camera Slider-frameworks.sh"; sourceTree = "<group>"; };
+		2E2F532C92C8899A80967A56591FCC2F /* Pods-Camera Slider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Camera Slider.modulemap"; sourceTree = "<group>"; };
+		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3418F174025801A0D2173E97447DBBB9 /* SwiftRangeSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftRangeSlider-Info.plist"; sourceTree = "<group>"; };
+		347BB04ED101C9D0F0197BDEBDDCEB4F /* Pods-Camera Slider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Camera Slider-Info.plist"; sourceTree = "<group>"; };
+		39360D2BF8293E52A74C0716D6891A9B /* Pods-Camera Slider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Camera Slider.debug.xcconfig"; sourceTree = "<group>"; };
+		40FF16B217E2C04B8D00B06BC07B2F30 /* Pods-Camera Slider-Camera SliderUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Camera Slider-Camera SliderUITests-Info.plist"; sourceTree = "<group>"; };
+		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		45755007734CBA41DF3D35E21CD81FCD /* Pods-Camera SliderTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Camera SliderTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4907011FD589C2CDD1A4E1E93D264B57 /* Pods-Camera SliderTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Camera SliderTests-dummy.m"; sourceTree = "<group>"; };
+		4A6B9E99727715535406B0248CA033F2 /* Pods-Camera Slider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Camera Slider-dummy.m"; sourceTree = "<group>"; };
+		55EC937631A11413FCEA7A6DD2A05017 /* Pods-Camera Slider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Camera Slider-umbrella.h"; sourceTree = "<group>"; };
+		5865E6F7A8965A5A9078E4DA2D25185E /* SwiftRangeSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftRangeSlider.framework; path = SwiftRangeSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6493199B230EE0AFD6CD1D995898A973 /* Pods-Camera Slider-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Camera Slider-acknowledgements.plist"; sourceTree = "<group>"; };
+		6CD863A2A8DBA55AC68E643DD923BB89 /* SwiftRangeSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftRangeSlider-dummy.m"; sourceTree = "<group>"; };
+		71F17389BAE14C105EA7374353B18D6D /* Pods-Camera Slider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Camera Slider.release.xcconfig"; sourceTree = "<group>"; };
+		7A731FB501EBA462398F7D4620C57943 /* Pods-Camera Slider-Camera SliderUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Camera Slider-Camera SliderUITests.modulemap"; sourceTree = "<group>"; };
+		869F7F98B4802F033DD8BDB0B080BF97 /* Pods_Camera_Slider_Camera_SliderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Camera_Slider_Camera_SliderUITests.framework; path = "Pods-Camera Slider-Camera SliderUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		880B2C3F670E7C233C7030E7D6B56A3D /* SwiftRangeSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftRangeSlider-prefix.pch"; sourceTree = "<group>"; };
+		8D3637DA4583BC49C7163400AF527F3A /* Pods_Camera_SliderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Camera_SliderTests.framework; path = "Pods-Camera SliderTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		979A9921417E48346024C0F66BB63AC7 /* Pods-Camera SliderTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Camera SliderTests-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A476287E0A0E64ECF0A78586FBD2FE45 /* Pods-Camera Slider-Camera SliderUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Camera Slider-Camera SliderUITests-dummy.m"; sourceTree = "<group>"; };
+		A8A9071456D35CF177257F14C0CC39DF /* SwiftRangeSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftRangeSlider.modulemap; sourceTree = "<group>"; };
+		AC1C8549BCC9C14F31B7EFC268595B6C /* SwiftRangeSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftRangeSlider.xcconfig; sourceTree = "<group>"; };
+		AFAEFD845ACD1D5C9069CEB99A83D344 /* Pods-Camera Slider-Camera SliderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Camera Slider-Camera SliderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BEC8E8749205F46B7AC73623674AD1A7 /* Pods-Camera SliderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Camera SliderTests.release.xcconfig"; sourceTree = "<group>"; };
+		C88605C6051BC681B16DACA1797C7C89 /* SwiftRangeSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftRangeSlider-umbrella.h"; sourceTree = "<group>"; };
+		CE7DE8801591953512C4817275C1A137 /* RangeSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RangeSlider.swift; path = SwiftRangeSlider/RangeSlider.swift; sourceTree = "<group>"; };
+		DAB3734753FF5E4B185BEE1D81C83074 /* Pods-Camera SliderTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Camera SliderTests-Info.plist"; sourceTree = "<group>"; };
+		E2D0206FBF08C4DD9D8324CBE658D4BD /* Pods-Camera Slider-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Camera Slider-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E3742219C586847C30EE6891125866E5 /* RangeSliderTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RangeSliderTrack.swift; path = SwiftRangeSlider/RangeSliderTrack.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32BD4B159B1DC8D3707E10196D06236A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C26C51F3607945F97E62974E83668D42 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B5BFBBF2E3D9EE64DE4BC58EF116024 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C1F987AE24540B363F98EFC2DD541A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D1733C5CDE0F6E5C2017B9C83E081C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A018D6CB80138B5A4EC7E6762505EEF /* Foundation.framework in Frameworks */,
+				3BD7684DEB8F1939E78B776881FABEDB /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6381E58004ED8AF971DF96753AAA58BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09E593F9472C3BB1705DC8A0281817D4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		321C4F3E590EA68367C5CB49A7390211 /* Pods-Camera Slider-Camera SliderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7A731FB501EBA462398F7D4620C57943 /* Pods-Camera Slider-Camera SliderUITests.modulemap */,
+				01F6A7E7DE6AE2CF2341CBA2C254377D /* Pods-Camera Slider-Camera SliderUITests-acknowledgements.markdown */,
+				214BF6ACB4FAD5F02C13CF050A76D6AB /* Pods-Camera Slider-Camera SliderUITests-acknowledgements.plist */,
+				A476287E0A0E64ECF0A78586FBD2FE45 /* Pods-Camera Slider-Camera SliderUITests-dummy.m */,
+				0965C1786FF958365C6D7065134D5615 /* Pods-Camera Slider-Camera SliderUITests-frameworks.sh */,
+				40FF16B217E2C04B8D00B06BC07B2F30 /* Pods-Camera Slider-Camera SliderUITests-Info.plist */,
+				092EC0A845DE39C91935F4B4A6F260E9 /* Pods-Camera Slider-Camera SliderUITests-umbrella.h */,
+				1DCDEDCD090D0449D681FFB2806A30AA /* Pods-Camera Slider-Camera SliderUITests.debug.xcconfig */,
+				AFAEFD845ACD1D5C9069CEB99A83D344 /* Pods-Camera Slider-Camera SliderUITests.release.xcconfig */,
+			);
+			name = "Pods-Camera Slider-Camera SliderUITests";
+			path = "Target Support Files/Pods-Camera Slider-Camera SliderUITests";
+			sourceTree = "<group>";
+		};
+		3AAA2845B0ADBA3F3185CD4288990DFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1868EBD037AFA41A702F230CE58EA77C /* Pods_Camera_Slider.framework */,
+				869F7F98B4802F033DD8BDB0B080BF97 /* Pods_Camera_Slider_Camera_SliderUITests.framework */,
+				8D3637DA4583BC49C7163400AF527F3A /* Pods_Camera_SliderTests.framework */,
+				5865E6F7A8965A5A9078E4DA2D25185E /* SwiftRangeSlider.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		51F91A618B0E1AEE61A933CD5669A652 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6D0E76FF069A1DC2D66D8E67181ED39 /* SwiftRangeSlider */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5CEDC397AD8B8FD9BF5895584F476C92 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABCD229C5E0A271FD9AC57CDD68DB4E4 /* Pods-Camera Slider */,
+				321C4F3E590EA68367C5CB49A7390211 /* Pods-Camera Slider-Camera SliderUITests */,
+				D6CA2A511E37974C9119E652B45F3834 /* Pods-Camera SliderTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		ABCD229C5E0A271FD9AC57CDD68DB4E4 /* Pods-Camera Slider */ = {
+			isa = PBXGroup;
+			children = (
+				2E2F532C92C8899A80967A56591FCC2F /* Pods-Camera Slider.modulemap */,
+				E2D0206FBF08C4DD9D8324CBE658D4BD /* Pods-Camera Slider-acknowledgements.markdown */,
+				6493199B230EE0AFD6CD1D995898A973 /* Pods-Camera Slider-acknowledgements.plist */,
+				4A6B9E99727715535406B0248CA033F2 /* Pods-Camera Slider-dummy.m */,
+				2673C7E75D967978B878305EC0935E6A /* Pods-Camera Slider-frameworks.sh */,
+				347BB04ED101C9D0F0197BDEBDDCEB4F /* Pods-Camera Slider-Info.plist */,
+				55EC937631A11413FCEA7A6DD2A05017 /* Pods-Camera Slider-umbrella.h */,
+				39360D2BF8293E52A74C0716D6891A9B /* Pods-Camera Slider.debug.xcconfig */,
+				71F17389BAE14C105EA7374353B18D6D /* Pods-Camera Slider.release.xcconfig */,
+			);
+			name = "Pods-Camera Slider";
+			path = "Target Support Files/Pods-Camera Slider";
+			sourceTree = "<group>";
+		};
+		C6D0E76FF069A1DC2D66D8E67181ED39 /* SwiftRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				CE7DE8801591953512C4817275C1A137 /* RangeSlider.swift */,
+				1469DC8B8F667AECC47B0057AFCBC110 /* RangeSliderKnob.swift */,
+				E3742219C586847C30EE6891125866E5 /* RangeSliderTrack.swift */,
+				F9DB21BD84105D1B50E95FE5E69A6E8D /* Support Files */,
+			);
+			name = SwiftRangeSlider;
+			path = SwiftRangeSlider;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				51F91A618B0E1AEE61A933CD5669A652 /* Pods */,
+				3AAA2845B0ADBA3F3185CD4288990DFE /* Products */,
+				5CEDC397AD8B8FD9BF5895584F476C92 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D6CA2A511E37974C9119E652B45F3834 /* Pods-Camera SliderTests */ = {
+			isa = PBXGroup;
+			children = (
+				0AC13B1A769A3AFB27EB1ED318DF854E /* Pods-Camera SliderTests.modulemap */,
+				01FBCA75D13D6ED802C57DCE13BD66BF /* Pods-Camera SliderTests-acknowledgements.markdown */,
+				45755007734CBA41DF3D35E21CD81FCD /* Pods-Camera SliderTests-acknowledgements.plist */,
+				4907011FD589C2CDD1A4E1E93D264B57 /* Pods-Camera SliderTests-dummy.m */,
+				DAB3734753FF5E4B185BEE1D81C83074 /* Pods-Camera SliderTests-Info.plist */,
+				979A9921417E48346024C0F66BB63AC7 /* Pods-Camera SliderTests-umbrella.h */,
+				0703C15AD2B3752A0D79418BD4230000 /* Pods-Camera SliderTests.debug.xcconfig */,
+				BEC8E8749205F46B7AC73623674AD1A7 /* Pods-Camera SliderTests.release.xcconfig */,
+			);
+			name = "Pods-Camera SliderTests";
+			path = "Target Support Files/Pods-Camera SliderTests";
+			sourceTree = "<group>";
+		};
+		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */,
+				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F9DB21BD84105D1B50E95FE5E69A6E8D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8A9071456D35CF177257F14C0CC39DF /* SwiftRangeSlider.modulemap */,
+				AC1C8549BCC9C14F31B7EFC268595B6C /* SwiftRangeSlider.xcconfig */,
+				6CD863A2A8DBA55AC68E643DD923BB89 /* SwiftRangeSlider-dummy.m */,
+				3418F174025801A0D2173E97447DBBB9 /* SwiftRangeSlider-Info.plist */,
+				880B2C3F670E7C233C7030E7D6B56A3D /* SwiftRangeSlider-prefix.pch */,
+				C88605C6051BC681B16DACA1797C7C89 /* SwiftRangeSlider-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftRangeSlider";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		33D8A1D5EA8645FCA1A876C359538C9E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B7B0DFC290438BD97BEB8DAAA6DACD6 /* SwiftRangeSlider-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FCA4BAD7E5F7D185E12A1A9A008FB1B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1755777A707395F857556232C59D88BA /* Pods-Camera Slider-Camera SliderUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A07631AB8C092BB0149386F2FEF39023 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				677FBA14337583300A17827BB331CF5A /* Pods-Camera Slider-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DACD29E597133462935A7398025C8AE3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C20D5E17FBF45CFDC5A2125D1F95F2A0 /* Pods-Camera SliderTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1BAF98074270E655D3E6C17EDD97FF87 /* Pods-Camera Slider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E231D7BBC9B1E6AC9D42F282F1C14EE /* Build configuration list for PBXNativeTarget "Pods-Camera Slider" */;
+			buildPhases = (
+				A07631AB8C092BB0149386F2FEF39023 /* Headers */,
+				078ACE0BF9B43B6A318517DA0DE95C07 /* Sources */,
+				3B5BFBBF2E3D9EE64DE4BC58EF116024 /* Frameworks */,
+				7B269959FD6E2AB67ED1C3634079830E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4F556E263A02ECC91069DFD8EB67EEF /* PBXTargetDependency */,
+			);
+			name = "Pods-Camera Slider";
+			productName = "Pods-Camera Slider";
+			productReference = 1868EBD037AFA41A702F230CE58EA77C /* Pods_Camera_Slider.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		258EFE4C8D981007A394D05C5798682F /* Pods-Camera Slider-Camera SliderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B93A47B91BCE83BBA135E76E1799F6C /* Build configuration list for PBXNativeTarget "Pods-Camera Slider-Camera SliderUITests" */;
+			buildPhases = (
+				5FCA4BAD7E5F7D185E12A1A9A008FB1B /* Headers */,
+				A971717F95D25C7AD961136D492464A7 /* Sources */,
+				32BD4B159B1DC8D3707E10196D06236A /* Frameworks */,
+				B301184E0D994DBC6F4880E581180D5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E936BCBB6CE1DAC260821DCBE0F8C38 /* PBXTargetDependency */,
+			);
+			name = "Pods-Camera Slider-Camera SliderUITests";
+			productName = "Pods-Camera Slider-Camera SliderUITests";
+			productReference = 869F7F98B4802F033DD8BDB0B080BF97 /* Pods_Camera_Slider_Camera_SliderUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		41D0269D9FB027CB8E1194B494EE2371 /* Pods-Camera SliderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03C5476874809A571039F43F066AC22F /* Build configuration list for PBXNativeTarget "Pods-Camera SliderTests" */;
+			buildPhases = (
+				DACD29E597133462935A7398025C8AE3 /* Headers */,
+				03B09AF592C4F82B7309086F8A19CCE2 /* Sources */,
+				6381E58004ED8AF971DF96753AAA58BE /* Frameworks */,
+				8B7D4A54EA1EF7F9C3182EAA72FF842F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC3F587E66413CAF63237BE4B837BC17 /* PBXTargetDependency */,
+			);
+			name = "Pods-Camera SliderTests";
+			productName = "Pods-Camera SliderTests";
+			productReference = 8D3637DA4583BC49C7163400AF527F3A /* Pods_Camera_SliderTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B4468DA463E43D33582E6BA100A6B78E /* SwiftRangeSlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2C56B813F68CE18B48BF65EE910319C /* Build configuration list for PBXNativeTarget "SwiftRangeSlider" */;
+			buildPhases = (
+				33D8A1D5EA8645FCA1A876C359538C9E /* Headers */,
+				7D76972A15FDF37A044C8613DCDC53BC /* Sources */,
+				4D1733C5CDE0F6E5C2017B9C83E081C7 /* Frameworks */,
+				07F7FD6D65F05F20419F1B6936BBE9E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftRangeSlider;
+			productName = SwiftRangeSlider;
+			productReference = 5865E6F7A8965A5A9078E4DA2D25185E /* SwiftRangeSlider.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 3AAA2845B0ADBA3F3185CD4288990DFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BAF98074270E655D3E6C17EDD97FF87 /* Pods-Camera Slider */,
+				258EFE4C8D981007A394D05C5798682F /* Pods-Camera Slider-Camera SliderUITests */,
+				41D0269D9FB027CB8E1194B494EE2371 /* Pods-Camera SliderTests */,
+				B4468DA463E43D33582E6BA100A6B78E /* SwiftRangeSlider */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07F7FD6D65F05F20419F1B6936BBE9E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B269959FD6E2AB67ED1C3634079830E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B7D4A54EA1EF7F9C3182EAA72FF842F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B301184E0D994DBC6F4880E581180D5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03B09AF592C4F82B7309086F8A19CCE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51055C573C84B7C03BE00FBC5400726 /* Pods-Camera SliderTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		078ACE0BF9B43B6A318517DA0DE95C07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E6F03857567D855267050342F23906C /* Pods-Camera Slider-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D76972A15FDF37A044C8613DCDC53BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF44245E1F5D218AED37E1579C99C145 /* RangeSlider.swift in Sources */,
+				5652480EAC92270640DA00F3BBB283E7 /* RangeSliderKnob.swift in Sources */,
+				670D15E04915EE84A15481ACE5BB7A9A /* RangeSliderTrack.swift in Sources */,
+				ADD70A73049D61C7ADD6942CC2EB2232 /* SwiftRangeSlider-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A971717F95D25C7AD961136D492464A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55469A923B034CB3CB1CA75203A26507 /* Pods-Camera Slider-Camera SliderUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E936BCBB6CE1DAC260821DCBE0F8C38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftRangeSlider;
+			target = B4468DA463E43D33582E6BA100A6B78E /* SwiftRangeSlider */;
+			targetProxy = FC92FDE73FBA72ED12F468A9B6EF859C /* PBXContainerItemProxy */;
+		};
+		C4F556E263A02ECC91069DFD8EB67EEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftRangeSlider;
+			target = B4468DA463E43D33582E6BA100A6B78E /* SwiftRangeSlider */;
+			targetProxy = 35C707C65D603E83BD5B69378FA44FCB /* PBXContainerItemProxy */;
+		};
+		FC3F587E66413CAF63237BE4B837BC17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Camera Slider";
+			target = 1BAF98074270E655D3E6C17EDD97FF87 /* Pods-Camera Slider */;
+			targetProxy = 843BD569782E99A8E5744FF46E16519F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0D90ACF6A582F1791A0EC768FC8420CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0703C15AD2B3752A0D79418BD4230000 /* Pods-Camera SliderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Camera SliderTests/Pods-Camera SliderTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Camera SliderTests/Pods-Camera SliderTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		18B4DEB55BE81E43B307C35CD1C52B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC1C8549BCC9C14F31B7EFC268595B6C /* SwiftRangeSlider.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftRangeSlider/SwiftRangeSlider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftRangeSlider/SwiftRangeSlider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftRangeSlider/SwiftRangeSlider.modulemap";
+				PRODUCT_MODULE_NAME = SwiftRangeSlider;
+				PRODUCT_NAME = SwiftRangeSlider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2F9556F374D84CC7BDB8F574E685568B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39360D2BF8293E52A74C0716D6891A9B /* Pods-Camera Slider.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Camera Slider/Pods-Camera Slider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Camera Slider/Pods-Camera Slider.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		510B057D2E9F059C50D52DA5D90F3ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		5231F6159D469A430C0D098B3F3BE1B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEC8E8749205F46B7AC73623674AD1A7 /* Pods-Camera SliderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Camera SliderTests/Pods-Camera SliderTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Camera SliderTests/Pods-Camera SliderTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		804E13245C9FBBE6A340C555CA8B2B4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9D516AB769791A3AF5D425A5FAB86195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC1C8549BCC9C14F31B7EFC268595B6C /* SwiftRangeSlider.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftRangeSlider/SwiftRangeSlider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftRangeSlider/SwiftRangeSlider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftRangeSlider/SwiftRangeSlider.modulemap";
+				PRODUCT_MODULE_NAME = SwiftRangeSlider;
+				PRODUCT_NAME = SwiftRangeSlider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9FFBE88436E491A7EBF6BCB10B60FAC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DCDEDCD090D0449D681FFB2806A30AA /* Pods-Camera Slider-Camera SliderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Camera Slider-Camera SliderUITests/Pods-Camera Slider-Camera SliderUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Camera Slider-Camera SliderUITests/Pods-Camera Slider-Camera SliderUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ADB022320D4F79709E65F66556E94949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F17389BAE14C105EA7374353B18D6D /* Pods-Camera Slider.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Camera Slider/Pods-Camera Slider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Camera Slider/Pods-Camera Slider.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DF26D32ED4D83CA42D528DA289F23422 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFAEFD845ACD1D5C9069CEB99A83D344 /* Pods-Camera Slider-Camera SliderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Camera Slider-Camera SliderUITests/Pods-Camera Slider-Camera SliderUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Camera Slider-Camera SliderUITests/Pods-Camera Slider-Camera SliderUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03C5476874809A571039F43F066AC22F /* Build configuration list for PBXNativeTarget "Pods-Camera SliderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D90ACF6A582F1791A0EC768FC8420CD /* Debug */,
+				5231F6159D469A430C0D098B3F3BE1B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B93A47B91BCE83BBA135E76E1799F6C /* Build configuration list for PBXNativeTarget "Pods-Camera Slider-Camera SliderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FFBE88436E491A7EBF6BCB10B60FAC4 /* Debug */,
+				DF26D32ED4D83CA42D528DA289F23422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				804E13245C9FBBE6A340C555CA8B2B4C /* Debug */,
+				510B057D2E9F059C50D52DA5D90F3ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E231D7BBC9B1E6AC9D42F282F1C14EE /* Build configuration list for PBXNativeTarget "Pods-Camera Slider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F9556F374D84CC7BDB8F574E685568B /* Debug */,
+				ADB022320D4F79709E65F66556E94949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2C56B813F68CE18B48BF65EE910319C /* Build configuration list for PBXNativeTarget "SwiftRangeSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B4DEB55BE81E43B307C35CD1C52B3A /* Debug */,
+				9D516AB769791A3AF5D425A5FAB86195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
