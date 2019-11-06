@@ -46,15 +46,15 @@ struct RangeSlider: View {
                     HStack(spacing: 0) {
                     VStack {
                         ZStack {
-                        Circle()
-                            .fill(Color(red: 165/255, green: 0, blue: 0, opacity: 1))
-                            .frame(width: 30, height: 30, alignment: .center)
+                            Circle()
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color("color6"), Color("color5")]), startPoint: .leading, endPoint: .trailing))
+                                .frame(width: 30, height: 30, alignment: .center)
                             Text("S")
                             .font(.custom("Montserrat-Bold", size: 20))
                         }
                         Text("\(numberFormatter.string(from: data.selectedMinValue as NSNumber) ?? "")")
                         .font(.custom("Montserrat-Bold", size: 12))
-                    } .zIndex(1) .offset(x: leftHandleViewState.width + 15, y: 15)
+                    } .zIndex(1) .offset(x: leftHandleViewState.width + 15, y: 10)
                     .gesture(leftHandleDragGesture)
                     Rectangle()
                         .frame(width: CGFloat(300.0), height: CGFloat(3.0), alignment: .center)
@@ -62,14 +62,14 @@ struct RangeSlider: View {
                     VStack{
                         ZStack {
                         Circle()
-                            .fill(Color(red: 165/255, green: 0, blue: 0, opacity: 1))
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color("color6"), Color("color5")]), startPoint: .leading, endPoint: .trailing))
                             .frame(width: 30, height: 30, alignment: .center)
                             Text("E")
                             .font(.custom("Montserrat-Bold", size: 20))
                         }
                         Text("\(numberFormatter.string(from: data.selectedMaxValue as NSNumber) ?? "")")
                         .font(.custom("Montserrat-Bold", size: 12))
-                    } .zIndex(1) .offset(x: rightHandleViewState.width - 15, y: 15)
+                    } .zIndex(1) .offset(x: rightHandleViewState.width - 15, y: 10)
                         .gesture(rightHandleDragGesture)
                     }
         
