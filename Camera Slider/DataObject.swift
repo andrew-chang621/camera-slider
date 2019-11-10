@@ -10,12 +10,13 @@ import Foundation
 import SwiftUI
 
 open class DataObject: ObservableObject {
+    let oneBuffer = Data(bytes: "01".hexa, count: 1)
     @Published var startArray: [UInt8] = []
     @Published var endArray: [UInt8] = []
     @Published var timeArray: [UInt8] = []
     @Published var executeArray: [UInt8] = []
-    @Published var selectedMinValue: CGFloat = 0.15
-    @Published var selectedMaxValue: CGFloat = 1.35
+    @Published var selectedMinValue: CGFloat = 0.00
+    @Published var selectedMaxValue: CGFloat = 1.00
     @Published var time: Double = 0
     @Published var bufferArray: [Data] = []
     
@@ -45,16 +46,6 @@ open class DataObject: ObservableObject {
         }
         
         print(startHex + " " + endHex + " " + timeHex)
-    }
-    
-    func prepareExecute(value: String) {
-        executeArray = value.hexa
-        let executeBuffer = Data(bytes: executeArray, count: 1)
-        if bufferArray.count < 4 {
-            bufferArray.append(executeBuffer)
-        } else {
-            bufferArray[3] = executeBuffer
-        }
     }
     
     func makeTwoBytes(value: String) -> String {

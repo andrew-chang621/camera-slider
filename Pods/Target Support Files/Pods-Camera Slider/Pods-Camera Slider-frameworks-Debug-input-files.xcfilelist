@@ -1,2 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-Camera Slider/Pods-Camera Slider-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RxBluetoothKit/RxBluetoothKit.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/SwiftRangeSlider/SwiftRangeSlider.framework

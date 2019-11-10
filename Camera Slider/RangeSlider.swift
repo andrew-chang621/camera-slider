@@ -12,11 +12,11 @@ struct RangeSlider: View {
     @EnvironmentObject var data: DataObject
     @State var leftHandleViewState = CGSize.zero
     @State var rightHandleViewState = CGSize.zero
-    @State var start : CGFloat = 0
-    @State var end : CGFloat = 1.35
-    private let numberFormatter = NumberFormatter.numberFormatter(maxDecimalPlaces: 2, minDecimalPlaces: 0)
-    let minValue : CGFloat = 0.15
-    let maxValue : CGFloat = 1.35
+    @State var start : CGFloat = 0.00
+    @State var end : CGFloat = 1.00
+    private let numberFormatter = NumberFormatter.numberFormatter(maxDecimalPlaces: 2, minDecimalPlaces: 2)
+    let minValue : CGFloat = 0.00
+    let maxValue : CGFloat = 1.00
     let step : CGFloat = 0.01
     private let lineWidth: CGFloat = 300.0
     private let handleDiameter: CGFloat = 30

@@ -7,6 +7,9 @@ target 'Camera Slider' do
 
   # Pods for Camera Slider
 pod 'SwiftRangeSlider'
+pod 'RxBluetoothKit'
+pod 'RxSwift'
+pod 'RxCocoa'
   target 'Camera SliderTests' do
     inherit! :search_paths
     # Pods for testing

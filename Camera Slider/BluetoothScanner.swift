@@ -18,13 +18,17 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
     
 
     public static let bleServiceUUID = CBUUID.init(string: "AAAA1111-BBBB-2222-CCCC-3333DDDD4444")
+    public static let shutdownServiceUUID = CBUUID.init(string: "AAAA1111-BBBB-2222-CCCC-3333EEEE5555")
     public static let startPosCharacteristicUUID = CBUUID.init(string: "A1A1")
     public static let endPosCharacteristicUUID = CBUUID.init(string: "A2A1")
     public static let timeCharacteristicUUID = CBUUID.init(string: "A3A1")
     public static let executeCharacteristicUUID = CBUUID.init(string: "A4A1")
-    private var serviceArray: [CBUUID] = [bleServiceUUID]
+    public static let rebootCharacteristicUUID = CBUUID.init(string: "A5A1")
+    public static let shutdownCharacteristicUUID = CBUUID.init(string: "A6A1")
+    private var deviceUUID: [UUID] = []
+    private var knownPeripherals: [CBPeripheral] = []
     
-    private let characteristicsUUID = [startPosCharacteristicUUID, endPosCharacteristicUUID, timeCharacteristicUUID, executeCharacteristicUUID]
+    private let characteristicsUUID = [startPosCharacteristicUUID, endPosCharacteristicUUID, timeCharacteristicUUID, executeCharacteristicUUID, rebootCharacteristicUUID, shutdownCharacteristicUUID]
     
     // Array to contain names of BLE devices to connect to.
     // Accessable by ContentView for Rendering the SwiftUI Body on change in this array.
@@ -36,9 +40,7 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
     func startCentralManager() {
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
         print("Central Manager State: \(self.centralManager.state)")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.centralManagerDidUpdateState(self.centralManager)
-        }
+        self.centralManagerDidUpdateState(self.centralManager)
     }
 
     // Handles BT Turning On/Off
@@ -60,16 +62,20 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
             print("BLE is Powered Off")
             break
            case .poweredOn:
-            print("Central scanning for", BLEConnection.bleServiceUUID);
-            print(self.centralManager.retrieveConnectedPeripherals(withServices: serviceArray))
-            self.centralManager.scanForPeripherals(withServices: [BLEConnection.bleServiceUUID], options: nil)
-            break
-            
+            print("BLE is Powered On")
+             /* if deviceUUID.count > 0 {
+                self.knownPeripherals = self.centralManager.retrievePeripherals(withIdentifiers: deviceUUID)
+                print(knownPeripherals)
+                self.centralManager.connect(knownPeripherals[0], options: nil)
+            } else { */
+                print("Central scanning for", BLEConnection.bleServiceUUID);
+            self.centralManager.scanForPeripherals(withServices: [BLEConnection.bleServiceUUID, BLEConnection.shutdownServiceUUID], options: nil)
+                break
+           /* }*/
         }
 
        if(central.state != CBManagerState.poweredOn)
        {
-           // In a real app, you'd deal with all the states correctly
            return;
        }
     }
@@ -82,9 +88,12 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
         self.centralManager.stopScan()
         // Copy the peripheral instance
         self.peripheral = peripheral
-        self.peripheral.delegate = self
+        if self.deviceUUID.count == 0 {
+            self.deviceUUID.append(peripheral.identifier)
+        }
         // Connect!
         print(peripheral)
+        self.centralManager.cancelPeripheralConnection(self.peripheral)
         self.centralManager.connect(self.peripheral, options: nil)
     }
 
@@ -95,28 +104,31 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
             print("Connected to your BLE Board")
             self.bluetoothText = "Disconnect"
             self.connected = true
+            peripheral.delegate = self
             self.redIndicator = "DarkRed"
             self.greenIndicator = "LightGreen"
-            peripheral.discoverServices([BLEConnection.bleServiceUUID])
-            print("pls print")
+            self.peripheral.discoverServices([BLEConnection.bleServiceUUID, BLEConnection.shutdownServiceUUID])
+            print(self.centralManager.retrieveConnectedPeripherals(withServices: [BLEConnection.bleServiceUUID, BLEConnection.shutdownServiceUUID]))
         }
     }
 
 
     // Handles discovery event
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        guard error == nil else {
+            print(error)
+            return
+        }
         if let services = peripheral.services {
+            print(peripheral.services)
             for service in services {
-                if service.uuid == BLEConnection.bleServiceUUID {
+                if service.uuid == BLEConnection.bleServiceUUID || service.uuid == BLEConnection.shutdownServiceUUID {
                     print("BLE Service found")
                     //Now kick off discovery of characteristics
-                    peripheral.discoverCharacteristics(nil, for: service)
-                    return
-                }
-                else {
-                    print("wtf happened")
+                    peripheral.discoverCharacteristics(characteristicsUUID, for: service)
                 }
             }
+            return
         }
     }
 
@@ -127,12 +139,15 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
                 for uuid in characteristicsUUID {
                     if characteristic.uuid == uuid {
                     print(characteristic)
-                        characteristicList.append(characteristic)
+                            characteristicList.append(characteristic)
+                        
                     }
                 }
             }
         }
     }
+    
+    
     
     public func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
         guard error == nil else {
@@ -150,23 +165,42 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
         }
     }
     
-    
-    
     public func startCamera(data: Data) {
         peripheral.writeValue(data, for: characteristicList[3], type: CBCharacteristicWriteType.withResponse)
     }
     
+    public func reboot(data: Data) {
+         peripheral.writeValue(data, for: characteristicList[4], type: CBCharacteristicWriteType.withResponse)
+    }
+    public func shutdown(data: Data) {
+            peripheral.writeValue(data, for: characteristicList[5], type: CBCharacteristicWriteType.withResponse)
+       }
+    
     public func disconnect() {
+        for characteristic in characteristicList {
+            self.peripheral.setNotifyValue(false, for: characteristic)
+        }
         self.centralManager.cancelPeripheralConnection(self.peripheral)
-        self.bluetoothText = "Connect"
-        self.connected = false
-        self.redIndicator = "LightRed"
-        self.greenIndicator = "DarkGreen"
+    }
+    
+    public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        guard error == nil else {
+            print(error)
+            self.bluetoothText = "Connect"
+            self.connected = false
+            self.redIndicator = "LightRed"
+            self.greenIndicator = "DarkGreen"
+            self.characteristicList = []
+            return
+        }
+        print("successful disconnect")
+            self.bluetoothText = "Connect"
+            self.connected = false
+            self.redIndicator = "LightRed"
+            self.greenIndicator = "DarkGreen"
+            self.characteristicList = []
+            return
     }
 }
 
-struct Device: Identifiable {
-    let id: String
-    let name: String
-}
 
