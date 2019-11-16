@@ -21,7 +21,6 @@ open class DataObject: ObservableObject {
     @Published var bufferArray: [Data] = []
     
     
-    
     func updateData() {
         let startHex = String(Int(selectedMinValue * 100), radix: 16)
         let endHex = String(Int(selectedMaxValue * 100), radix: 16)

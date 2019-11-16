@@ -117,6 +117,7 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         guard error == nil else {
             print(error)
+            print("wtf")
             return
         }
         if let services = peripheral.services {
@@ -151,7 +152,9 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
     
     public func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
         guard error == nil else {
+            print(characteristic)
             print("Error discovering services: error")
+            print(error)
           return
         }
          print("Write value successful")
@@ -167,6 +170,7 @@ open class BLEConnection: NSObject, CBPeripheralDelegate, CBCentralManagerDelega
     
     public func startCamera(data: Data) {
         peripheral.writeValue(data, for: characteristicList[3], type: CBCharacteristicWriteType.withResponse)
+        print("huh")
     }
     
     public func reboot(data: Data) {

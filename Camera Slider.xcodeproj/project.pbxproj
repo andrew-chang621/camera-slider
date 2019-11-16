@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60A5F04A3FCB5EB90821DC6D /* Pods_Camera_Slider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC95D642DC032AB79C910BB6 /* Pods_Camera_Slider.framework */; };
+		8E0EF4042378F78300AF6497 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0EF4032378F78300AF6497 /* OrientationManager.swift */; };
 		8E1B83912371B444009A0518 /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B83902371B444009A0518 /* DataObject.swift */; };
 		8E4F7D9A23714944002694DD /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E4F7D9923714944002694DD /* Montserrat-Bold.otf */; };
 		8E4F7D9C23714986002694DD /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E4F7D9B23714986002694DD /* Montserrat-Light.otf */; };
@@ -50,6 +51,7 @@
 		63464DBC579877FEAEE6936A /* Pods_Camera_SliderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camera_SliderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F6256BAD3B75872181079F /* Pods-Camera Slider-Camera SliderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera Slider-Camera SliderUITests.debug.xcconfig"; path = "Target Support Files/Pods-Camera Slider-Camera SliderUITests/Pods-Camera Slider-Camera SliderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BBFB96C3C7538BE758C08A3 /* Pods_Camera_Slider_Camera_SliderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camera_Slider_Camera_SliderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E0EF4032378F78300AF6497 /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationManager.swift; sourceTree = "<group>"; };
 		8E1B83902371B444009A0518 /* DataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObject.swift; sourceTree = "<group>"; };
 		8E4F7D9923714944002694DD /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.otf"; path = "../../Downloads/montserrat/Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		8E4F7D9B23714986002694DD /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.otf"; path = "../../Downloads/montserrat/Montserrat-Light.otf"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				8EB647352360732800D8BA2C /* AppDelegate.swift */,
 				8EB647372360732800D8BA2C /* SceneDelegate.swift */,
+				8E0EF4032378F78300AF6497 /* OrientationManager.swift */,
 				8EB647392360732800D8BA2C /* ContentView.swift */,
 				8E1B83902371B444009A0518 /* DataObject.swift */,
 				8E4F7D9D237151F0002694DD /* ColorSlider.swift */,
@@ -453,6 +456,7 @@
 			files = (
 				8E4F7D9E237151F0002694DD /* ColorSlider.swift in Sources */,
 				8EB1FA1A236A830200CA6634 /* NumberFormatterExtensions.swift in Sources */,
+				8E0EF4042378F78300AF6497 /* OrientationManager.swift in Sources */,
 				8EFA8AAF23615278003C32E1 /* RangeSlider.swift in Sources */,
 				8EB647362360732800D8BA2C /* AppDelegate.swift in Sources */,
 				8E1B83912371B444009A0518 /* DataObject.swift in Sources */,

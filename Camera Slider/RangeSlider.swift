@@ -15,16 +15,16 @@ struct RangeSlider: View {
     @State var start : CGFloat = 0.00
     @State var end : CGFloat = 1.00
     private let numberFormatter = NumberFormatter.numberFormatter(maxDecimalPlaces: 2, minDecimalPlaces: 2)
-    let minValue : CGFloat = 0.00
+    let minValue : CGFloat = 0
     let maxValue : CGFloat = 1.00
     let step : CGFloat = 0.01
-    private let lineWidth: CGFloat = 300.0
-    private let handleDiameter: CGFloat = 30
+    private let lineWidth: CGFloat = 270.0
+    private let handleDiameter: CGFloat = 24
     
     var body: some View {
             let leftHandleDragGesture = DragGesture(minimumDistance: 1, coordinateSpace: .local)
                 .onChanged { value in
-                    guard value.location.x >= 0 && value.location.x <= 300 else {
+                    guard value.location.x >= 0, value.location.x <= (self.lineWidth + self.handleDiameter) else {
                         return
                     }
                     self.leftHandleViewState.width = value.location.x
@@ -34,7 +34,7 @@ struct RangeSlider: View {
             }
             let rightHandleDragGesture = DragGesture(minimumDistance: 1, coordinateSpace: .local)
                 .onChanged { value in
-                    guard value.location.x <= 0 && value.location.x >= -300 else {
+                    guard value.location.x <= 0, value.location.x >= -(self.lineWidth + self.handleDiameter) else {
                         return
                     }
                     self.rightHandleViewState.width = value.location.x
@@ -45,6 +45,9 @@ struct RangeSlider: View {
             return
                     HStack(spacing: 0) {
                     VStack {
+                        Text("\(numberFormatter.string(from: data.selectedMinValue as NSNumber) ?? "")")
+                        .font(.custom("Montserrat-Bold", size: 12))
+                            .offset(y: 5)
                         ZStack {
                             Circle()
                                 .fill(LinearGradient(gradient: Gradient(colors: [Color("color6"), Color("color5")]), startPoint: .leading, endPoint: .trailing))
@@ -52,12 +55,11 @@ struct RangeSlider: View {
                             Text("S")
                             .font(.custom("Montserrat-Bold", size: 20))
                         }
-                        Text("\(numberFormatter.string(from: data.selectedMinValue as NSNumber) ?? "")")
-                        .font(.custom("Montserrat-Bold", size: 12))
-                    } .zIndex(1) .offset(x: leftHandleViewState.width + 15, y: 10)
+                        
+                    } .zIndex(1) .offset(x: leftHandleViewState.width + 5, y: -13)
                     .gesture(leftHandleDragGesture)
                     Rectangle()
-                        .frame(width: CGFloat(300.0), height: CGFloat(3.0), alignment: .center)
+                        .frame(width: lineWidth, height: CGFloat(3.0), alignment: .center)
                         .zIndex(0)
                     VStack{
                         ZStack {
@@ -69,7 +71,7 @@ struct RangeSlider: View {
                         }
                         Text("\(numberFormatter.string(from: data.selectedMaxValue as NSNumber) ?? "")")
                         .font(.custom("Montserrat-Bold", size: 12))
-                    } .zIndex(1) .offset(x: rightHandleViewState.width - 15, y: 10)
+                    } .zIndex(1) .offset(x: rightHandleViewState.width - 5, y: 10)
                         .gesture(rightHandleDragGesture)
                     }
         

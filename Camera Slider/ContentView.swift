@@ -16,17 +16,20 @@ struct ContentView: View {
     @ObservedObject var bleConnection = BLEConnection()
     @EnvironmentObject var data: DataObject
     @State var showAlert: Bool = false
+    @State var showAlert1: Bool = false
     @State var showAlert2: Bool = false
     @State var showAlert3: Bool = false
-    @State var showAlert4: Bool = false
-    @State var rebootAlert: Bool = true
+    @State var specAlert: ActiveAlert3 = .first
+    @State var startAlert: ActiveAlert2 = .first
+    @State var timeRemaining = 40
     @State var expand = false
     @State var xExpand = 100
     @State var yExpand = -250
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let numberFormatter = NumberFormatter.numberFormatter()
     private let numberFormatterWithDecimals = NumberFormatter.numberFormatter(maxDecimalPlaces: 2, minDecimalPlaces: 0)
     var rangeSlider = RangeSlider()
-    var timeSlider = ColorUISlider(color: UIColor(red: 165/255, green: 0, blue: 0, alpha: 1), value: .constant(0.5), maxVal: .constant(500), minVal: .constant(1))
+    var timeSlider = ColorUISlider(color: UIColor(red: 165/255, green: 0, blue: 0, alpha: 1), value: .constant(0.5))
     @State var confirmedStart: String = "--"
     @State var confirmedEnd: String = "--"
     @State var confirmedTime: String = "--"
@@ -101,17 +104,28 @@ struct ContentView: View {
                     
                     Button(action: {
                         if self.bleConnection.connected == false {
-                            self.showAlert = true
+                            self.specAlert = .first
+                            self.showAlert.toggle()
                         } else{
-                            self.confirmedStart = "\(self.numberFormatterWithDecimals.string(from: self.data.selectedMinValue as NSNumber) ?? "") m"
-                            self.confirmedEnd = "\(self.numberFormatterWithDecimals.string(from: self.data.selectedMaxValue as NSNumber) ?? "") m"
-                            self.confirmedTime = "\(self.numberFormatter.string(from: self.data.time as NSNumber) ?? "") s"
-                            self.data.updateData()
-                            print(self.data.bufferArray)
-                            self.bleConnection.writeData(data: self.data.bufferArray)
+                            if self.data.time > Double(abs((self.data.selectedMaxValue - self.data.selectedMinValue) * 500)) {
+                                self.specAlert = .second
+                                self.showAlert.toggle()
+                            }
+                            else if self.data.time < Double(abs((self.data.selectedMaxValue - self.data.selectedMinValue) * 4)) {
+                                self.specAlert = .third
+                                self.showAlert.toggle()
+                            }
+                            else {
+                                self.confirmedStart = "\(self.numberFormatterWithDecimals.string(from: self.data.selectedMinValue as NSNumber) ?? "") m"
+                                self.confirmedEnd = "\(self.numberFormatterWithDecimals.string(from: self.data.selectedMaxValue as NSNumber) ?? "") m"
+                                self.confirmedTime = "\(self.numberFormatter.string(from: self.data.time as NSNumber) ?? "") s"
+                                self.data.updateData()
+                                print(self.data.bufferArray)
+                                self.bleConnection.writeData(data: self.data.bufferArray)
+                            }
                         }
                     }) {
-                        Text("Set Specificaitons")
+                        Text("Set Specifications")
                             .fontWeight(.semibold)
                             .font(.custom("Montserrat-Light", size: 17))
                     }
@@ -122,9 +136,15 @@ struct ContentView: View {
                     .offset(y: -10)
                     .buttonStyle(buttonAnimationStyle())
                     .alert(isPresented: $showAlert) {
-                        Alert(title: Text("Bluetooth Not Connected"), message: Text("Connect to the camera slider via Bluetooth using the connect button before setting data"), dismissButton: .default(Text("Got it!")))
+                        switch specAlert {
+                        case .first:
+                            return Alert(title: Text("Bluetooth Not Connected"), message: Text("Connect to the camera slider via Bluetooth using the connect button before setting data"), dismissButton: .default(Text("Got it!")))
+                        case .second:
+                            return Alert(title: Text("Time is too long"), message: Text("The provided distance between start and end is too short for the provided time. Please either decrease the time or increase the distance"), dismissButton: .default(Text("Got it!")))
+                        case .third:
+                            return Alert(title: Text("Time is too Short"), message: Text("The provided distance between start and end is too long for the provided time. Please either increase the time or decrease the distance"), dismissButton: .default(Text("Got it!")))
+                        }
                     }
-                        
                     
                 }
                 .frame(width: 350, height: 260, alignment: .center)
@@ -138,11 +158,12 @@ struct ContentView: View {
                 // Monitor "devices" array for changes. As changes happen, Render the Body again.
                 Button(action: {
                     if self.bleConnection.bluetoothText == "Connect" {
-                        self.showAlert = true
+                        self.startAlert = .first
+                        self.showAlert1.toggle()
                     }
-                    if self.confirmedStart == "--" || self.confirmedEnd == "--" || self.confirmedTime == "--" {
-                        self.showAlert2 = true
-                        self.showAlert = false
+                    else if self.confirmedStart == "--" || self.confirmedEnd == "--" || self.confirmedTime == "--" {
+                        self.startAlert = .second
+                        self.showAlert1.toggle()
                         print("yes")
                     } else {
                         self.bleConnection.startCamera(data: self.data.oneBuffer)
@@ -159,11 +180,14 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .offset(y: 0)
                 .shadow(radius: 10)
-                .alert(isPresented: $showAlert) {
-                Alert(title: Text("Bluetooth Not Connected"), message: Text("Connect to the camera slider via Bluetooth using the connect button before starting camera"), dismissButton: .default(Text("Got it!")))
-                }
-                .alert(isPresented: $showAlert2) {
-                Alert(title: Text("Data Not Set"), message: Text("Finish setting data for start, end, and time before starting the camera slider"), dismissButton: .default(Text("Got it!")))
+                .alert(isPresented: $showAlert1) {
+                    switch startAlert {
+                    case .first:
+                        return Alert(title: Text("Bluetooth Not Connected"), message: Text("Connect to the camera slider via Bluetooth using the connect button before starting camera"), dismissButton: .default(Text("Got it!")))
+                    case .second:
+                        return Alert(title: Text("Specifications Not Set"), message: Text("Finish setting specification for start, end, and time before starting the camera slider"), dismissButton: .default(Text("Got it!")))
+                    }
+                
                 }
             }
             VStack(spacing: 20) {
@@ -201,12 +225,13 @@ struct ContentView: View {
                 .foregroundColor(Color.black)
                    Button(action: {
                     if self.bleConnection.connected == false {
-                        self.showAlert3 = true
-                        self.rebootAlert = false
+                        self.startAlert = .second
+                        self.showAlert2.toggle()
                     } else {
+                        self.startAlert = .first
+                        self.showAlert2.toggle()
                        self.bleConnection.reboot(data: self.data.oneBuffer)
-                        self.rebootAlert = true
-                        self.showAlert3 = false
+                        
                         DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
                             self.bleConnection.startCentralManager()
                         }
@@ -217,18 +242,19 @@ struct ContentView: View {
                    } .offset(y: -20)
                     .foregroundColor(Color.black)
                     .buttonStyle(buttonAnimationStyle())
-                    .alert(isPresented: $rebootAlert) {
-                        Alert(title: Text("Reboot Starting"), message: Text("Please wait 40 seconds for the Raspberry Pi to reboot and reconnect"), dismissButton: .default(Text("Got it!")))
+                    .alert(isPresented: $showAlert2) {
+                        switch startAlert {
+                        case .first:
+                            return Alert(title: Text("Reboot Starting"), message: Text("Please wait 40 seconds for the Raspberry Pi to reboot and reconnect"), dismissButton: .default(Text("Got it!")))
+                        case .second:
+                            return Alert(title: Text("Bluetooth Not Connected"), message: Text("Must be connected to Raspberry Pi via bluetooth to reboot"), dismissButton: .default(Text("Got it!")))
+                        }
                     }
-                   .alert(isPresented: $showAlert3) {
-                    Alert(title: Text("Bluetooth Not Connected"), message: Text("Must be connected to Raspberry Pi via bluetooth to reboot"), dismissButton: .default(Text("Got it!")))
-                }
                    Button(action: {
                     if self.bleConnection.connected == false {
-                        self.showAlert4 = true
+                        self.showAlert3.toggle()
                     } else {
                         self.bleConnection.shutdown(data: self.data.oneBuffer)
-                        self.showAlert4 = false
                     }
                    }) {
                        Text("Shutdown")
@@ -236,7 +262,7 @@ struct ContentView: View {
                    }.offset(y: -20)
                 .foregroundColor(Color.black)
                 .buttonStyle(buttonAnimationStyle())
-                .alert(isPresented: $showAlert4) {
+                .alert(isPresented: $showAlert3) {
                     Alert(title: Text("Bluetooth Not Connected"), message: Text("Must be connected to Raspberry Pi via bluetooth to shut down"), dismissButton: .default(Text("Got it!")))
                 }
                }
@@ -247,17 +273,14 @@ struct ContentView: View {
             .stroke(Color.black, lineWidth: 3))
             .offset(x: 120, y: self.expand ? -193 : -250)
             .animation(.spring())
-            
         }
-
         .edgesIgnoringSafeArea(.all)
+        .supportedOrientations(.portrait)
         }
-    
         
 }
 
 struct buttonAnimationStyle: ButtonStyle {
-    
     func makeBody(configuration: Self.Configuration) -> some View { configuration.label
         .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
     }
@@ -283,3 +306,11 @@ struct ContentView_Previews: PreviewProvider {
 #endif
 
 
+
+enum ActiveAlert2 {
+    case first, second
+}
+
+enum ActiveAlert3 {
+    case first, second, third
+}

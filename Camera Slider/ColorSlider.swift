@@ -12,9 +12,9 @@ struct ColorUISlider: UIViewRepresentable {
     var color: UIColor
     @Binding var value: Double
     @EnvironmentObject var data: DataObject
-    @Binding var maxVal: Float
-    @Binding var minVal: Float
-    
+    @State var maxVal: Float = 500
+    @State var minVal: Float = 1
+
     class Coordinator: NSObject {
         let parent:ColorUISlider
         init(parent:ColorUISlider) {
@@ -30,10 +30,8 @@ struct ColorUISlider: UIViewRepresentable {
         Coordinator(parent: self)
     }
 
-    func makeUIView(context: Context) -> UISlider {
+    func makeUIView(context: UIViewRepresentableContext<ColorUISlider>) -> UISlider {
         let slider = UISlider(frame: .zero)
-        maxVal = Float(data.selectedMaxValue * 500)
-        minVal = Float(data.selectedMinValue * 4)
         slider.thumbTintColor = color
         slider.tintColor = .black
         slider.value = Float(value)
@@ -43,16 +41,16 @@ struct ColorUISlider: UIViewRepresentable {
         return slider
     }
 
-    func updateUIView(_ uiView: UISlider, context: Context) {
+    func updateUIView(_ uiView: UISlider, context: UIViewRepresentableContext<ColorUISlider>) {
         uiView.value = Float(value)
         print("updating UI")
-        uiView.maximumValue = maxVal
-        uiView.minimumValue = minVal
+        uiView.maximumValue = 500
+        uiView.minimumValue = 1
     }
 }
 
 struct ColorUISlider_Previews: PreviewProvider {
     static var previews: some View {
-        ColorUISlider(color: .red, value: .constant(0.5), maxVal: .constant(500), minVal: .constant(4))
+        ColorUISlider(color: .red, value: .constant(0.5)).environmentObject(DataObject())
     }
 }
